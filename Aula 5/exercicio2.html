@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="mostrar10Numeros()">Mostrar 10 números</button>
+    <button onclick="document.getElementById('artigo').style.display = 'block'">O que é débito técnico</button>
+    <button onclick="window.location.href = 'https://www.devmedia.com.br/jenkins-e-sonar-desenvolvimento-agil-em-java-revista-devcast-magazine-2/23642'">Saiba o que é Sonar e Jenkins</button>
+    <article id="artigo" style="display: none;">
+        <h1>O que é débito técnico</h1>
+        <p>O débito técnico no desenvolvimento de produtos acontece quando tomamos decisões priorizando a velocidade da implementação em detrimento de escolhas arquiteturais que resolvam o problema por completo. Geralmente é resultado da implementação de correções rápidas e momentâneas, sem considerar uma solução mais adequada para o longo prazo.</p>
+    </article>
+</body>
+<script>
+    function mostrar10Numeros(){
+        for(var i = 0; i < 10; i++){
+            let numero = document.createElement('p');
+            numero.textContent = i + 1;
+            document.body.appendChild(numero);
+        }
+    }
+</script>
+</html>
