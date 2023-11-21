@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Venda</title>
+  </head>
+  <body>
+    <div>
+      <h1>Cadastro de Venda</h1>
+      <div>
+        <p>
+          <label for="vendedor">Vendedor</label>
+          <select id="vendedor" name="vendedor">
+            <option value="Bárbara" label="Bárbara"></option>
+            <option value="Jennifer" label="Jennifer"></option>
+            <option value="João" label="João"></option>
+            <option value="Maria" label="Maria"></option>
+            <option value="José" label="José"></option>
+          </select>
+        </p>
+        <p>
+          <label for="produto">Produto</label>
+          <select id="produto" name="produto">
+            <option value="Tênis" label="Tênis"></option>
+            <option value="Camiseta" label="Camiseta"></option>
+            <option value="Calça" label="Calça"></option>
+          </select>
+        </p>
+        <p>
+          <label for="valorProduto">Valor</label>
+          <input type="text" id="valorProduto" placeholder="0,00" />
+        </p>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Produto</th>
+                <th>Valor</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Valor Total Compra</th>
+                    <th>Comissão</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span id="vlrTotalCompra"></span></td>
+                    <td><span id="vlrComissao"></span></td>
+                </tr>
+            </tbody>
+      </div>
+    </div>
+  </body>
+</html>

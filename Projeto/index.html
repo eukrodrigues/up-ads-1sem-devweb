@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="./css/estilo.css">
+</head>
+
+<body onload="montaCalendario()">
+    <input type="checkbox" id="menu-check">
+    <label for="menu-check">
+        <img src="./img/icone-menu.png" width="40px">
+    </label>
+    <nav>
+        <ul>
+            <li><a href="@">Home</a></li>
+            <li><a href="@">Configuração</a></li>
+        </ul>
+    </nav>
+
+    <div id="novaAgenda">
+        <h4 id="tituloAgenda">Novo Evento</h4>
+        <input type="text" id="inputTituloAgenda" placeholder="Título">
+
+        <form id="tipoAgenda">
+            <div id="tipoAgendaContainerMInsere"></div>
+        </form>
+
+        <button id="salvarAgenda">Salvar</button>
+        <button id="cancelarAgenda">Cancelar</button>
+    </div>
+
+    <div id="exibeAgenda">
+        <h4 id="tituloAgenda"></h4>
+        <input type="text" id="inputTituloAgenda" placeholder="Título">
+
+        <form id="tipoAgenda">
+            <div id="tipoAgendaContainerMExibe"></div>
+        </form>
+
+        <button id="salvarAgenda">Salvar</button>
+        <button id="deletarAgenda">Deletar</button>
+        <button id="cancelarAgenda">Fechar</button>
+    </div>
+
+    <div id="espacoCalendario">
+        <div id="cabecalho">
+            <button id="botaoAnterior">&lt;</button>
+            <div id="mesSelecionado"></div>
+            <button id="botaoPosterior">&gt;</button>
+        </div>
+
+        <div id="diasDaSemana">
+            <div>Domingo</div>
+            <div>Segunda-feira</div>
+            <div>Terça-feira</div>
+            <div>Quarta-feira</div>
+            <div>Quinta-feira</div>
+            <div>Sexta-feira</div>
+            <div>Sábado</div>
+        </div>
+
+        <div id="calendario"></div>
+    </div>
+
+    <div id="fundoModal"></div>
+
+</body>
+<script src="./js/scripts.js"></script>
+
+</html>

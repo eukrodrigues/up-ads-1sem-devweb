@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Comissões de Vendas</title>
+    <link rel="stylesheet" href="./css/formato.css">
+</head>
+
+<body>
+    <div class="conteudo">
+        <h1>Cálculo de Comissões de Vendas</h1>
+        <div>
+            <label for="vendedor">Nome do Vendedor:</label>
+            <input type="text" id="vendedor">
+            <br>
+            <br>
+            <label for="produto">Produto</label>
+            <select id="produto" name="produto">
+                <option value="Geladeira" label="Geladeira"></option>
+                <option value="Fogão" label="Fogão"></option>
+                <option value="Televisão" label="Televisão"></option>
+                <option value="Máquina de Lavar" label="Máquina de Lavar"></option>
+                <option value="Aspirador de Pó" label="Aspirador de Pó"></option>
+            </select>
+            <label for="valorProduto">Valor</label>
+            <input type="text" id="valorProduto">
+            <button onclick="adicionaLinhaVenda()">+</button>
+            <br>
+            <br>
+            <table id="tabelaVendas">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td><b>Total</b></td>
+                        <td>0</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <br>
+            <br>
+            <button onclick="calculaComissao()">Calcular Comissão</button>
+        </div>
+    </div>
+</body>
+<script src="./js/javascript.js"></script>
+
+</html>
