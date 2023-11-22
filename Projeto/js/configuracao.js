@@ -7,6 +7,7 @@ function montaTiposAgenda() {
         let eTipoAgenda = document.createElement('div');
         let eTextoTipoAgenda = document.createElement('input');
         let eCorTipoAgenda = document.createElement('input');
+        let eInputCor = document.createElement('input');
         let eBotaoDeletarTipoAgenda = document.createElement('div');
 
         var tituloTipoAgenda = tipoAgenda.titulo;
@@ -18,14 +19,19 @@ function montaTiposAgenda() {
         eTextoTipoAgenda.type = 'text';
         eTextoTipoAgenda.value = tipoAgenda.titulo;
         eTextoTipoAgenda.style.backgroundColor = tipoAgenda.cor;
+        eTextoTipoAgenda.classList.add('textoTipoAgenda');
 
         eCorTipoAgenda.value = tipoAgenda.cor;
 
         eBotaoDeletarTipoAgenda.innerText = 'Deletar';
         eBotaoDeletarTipoAgenda.classList.add('botaoDeletarTipoAgenda');
 
+        eInputCor.type = 'color';
+        eInputCor.value = tipoAgenda.cor;
+
         eTipoAgenda.appendChild(eTextoTipoAgenda);
         eTipoAgenda.appendChild(eCorTipoAgenda);
+        eTipoAgenda.appendChild(eInputCor);
         eTipoAgenda.appendChild(eBotaoDeletarTipoAgenda);
 
         eTextoTipoAgenda.addEventListener('blur', function () {
@@ -54,10 +60,29 @@ function montaTiposAgenda() {
 
                 eTipoAgenda.style.backgroundColor = corTipoAgenda;
                 eTextoTipoAgenda.style.backgroundColor = corTipoAgenda;
+                eInputCor.value = corTipoAgenda;
             }
         })
 
         eBotaoDeletarTipoAgenda.addEventListener('click', () => deletarTipoAgenda(tituloTipoAgenda));
+
+        eInputCor.addEventListener('input', function () {
+            if (eInputCor.value !== corTipoAgenda) {
+                tiposAgenda = tiposAgenda.filter(tipoAgenda => tipoAgenda.titulo !== tituloTipoAgenda);
+                tiposAgenda.push({
+                    titulo: eTextoTipoAgenda.value,
+                    cor: eInputCor.value
+                });
+
+                setTiposAgenda();
+                corTipoAgenda = eInputCor.value;
+
+                eTipoAgenda.style.backgroundColor = corTipoAgenda;
+                eTextoTipoAgenda.style.backgroundColor = corTipoAgenda;
+                eInputCor.value = corTipoAgenda;
+
+            }
+        })
 
         eTiposAgenda.appendChild(eTipoAgenda);
     })
@@ -80,19 +105,23 @@ function adicionarTipoAgenda() {
     let eTextoTipoAgenda = document.createElement('input');
     let eCorTipoAgenda = document.createElement('input');
     let eBotaoSalvarTipoAgenda = document.createElement('div');
+    let eInputCor = document.createElement('input');
 
     var tituloTipoAgenda = '';
     var corTipoAgenda = '';
 
     eTipoAgenda.classList.add('tipoAgenda');
+    eTipoAgenda.classList.add('novoTipoAgenda');
 
     eTextoTipoAgenda.type = 'text';
-    eTextoTipoAgenda.placeholder = 'Título do Tipo da Agenda'
+    eTextoTipoAgenda.placeholder = 'Título do Tipo da Agenda';
 
     eCorTipoAgenda.placeholder = 'Cor';
 
     eBotaoSalvarTipoAgenda.innerText = 'Salvar';
-    eBotaoSalvarTipoAgenda.classList.add('botaoSalvarTipoAgenda');
+    eBotaoSalvarTipoAgenda.classList.add('botaoDeletarTipoAgenda');
+
+    eInputCor.type = 'color';
 
     eBotaoSalvarTipoAgenda.addEventListener('click', function () {
         if (eTextoTipoAgenda.value && eCorTipoAgenda.value) {
@@ -109,8 +138,13 @@ function adicionarTipoAgenda() {
         }
     })
 
+    eInputCor.addEventListener('input', function () {
+        eCorTipoAgenda.value = eInputCor.value;
+    })
+
     eTipoAgenda.appendChild(eTextoTipoAgenda);
     eTipoAgenda.appendChild(eCorTipoAgenda);
+    eTipoAgenda.appendChild(eInputCor);
     eTipoAgenda.appendChild(eBotaoSalvarTipoAgenda);
 
     eTiposAgenda.appendChild(eTipoAgenda);

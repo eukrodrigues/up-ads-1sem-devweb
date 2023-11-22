@@ -24,10 +24,12 @@
         <h4 id="tituloAgendaMInsere">Nova Agenda</h4>
         <input type="text" id="inputTituloAgendaMInsere" placeholder="Título">
 
-        <label for="tipoAgendaMInsere" id="tituloTipoAgendaMInsere">Tipo da Agenda</label>
-        <form id="tipoAgendaMInsere">
-            <div id="tipoAgendaContainerMInsere"></div>
-        </form>
+        <div class="inputTipoAgenda">
+            <form id="tipoAgendaMInsere">
+                <legend class="legendaTipoAgenda"><b>Tipo da Agenda</b></legend>
+                <div id="tipoAgendaContainerMInsere"></div>
+            </form>
+        </div>
 
         <button id="salvarAgendaMInsere" onclick="criarAgenda()">Salvar</button>
         <button id="cancelarAgendaMInsere" onclick="fechaModalInsere()">Cancelar</button>
@@ -37,10 +39,12 @@
         <h4 id="tituloAgendaMExibe"></h4>
         <input type="text" id="inputTituloAgendaMExibe" placeholder="Título">
 
-        <label for="tipoAgendaMExibe" id="tituloTipoAgendaMExibe">Tipo da Agenda</label>
-        <form id="tipoAgendaMExibe">
-            <div id="tipoAgendaContainerMExibe"></div>
-        </form>
+        <div class="inputTipoAgenda">
+            <form id="tipoAgendaMExibe">
+                <legend class="legendaTipoAgenda"><b>Tipo da Agenda</b></legend>
+                <div id="tipoAgendaContainerMExibe"></div>
+            </form>
+        </div>
 
         <button id="salvarAgendaMExibe" onclick="atualizarAgenda()">Salvar</button>
         <button id="deletarAgendaMExibe" onclick="deletarAgenda()">Deletar</button>

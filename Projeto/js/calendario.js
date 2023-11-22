@@ -51,7 +51,6 @@ function atualizarAgenda() {
     if (eTituloAgendaMExibe.value && eRadioSelecionado) {
         gravarAgenda(eTituloAgendaMExibe.value, eRadioSelecionado.value);
         fechaModalExibe();
-        montaCalendario();
     } else {
         if (!eTituloAgendaMExibe.value) {
             eTituloAgendaMExibe.classList.add('erro');
@@ -70,7 +69,6 @@ function criarAgenda() {
     if (eTituloAgendaMInsere.value && eRadioSelecionado) {
         gravarAgenda(eTituloAgendaMInsere.value, eRadioSelecionado.value);
         fechaModalInsere();
-        montaCalendario();
     } else {
         if (!eTituloAgendaMInsere.value) {
             eTituloAgendaMInsere.classList.add('erro');
@@ -91,13 +89,14 @@ function gravarAgenda(tituloAgenda, tipoAgenda) {
         tipo: tipoAgenda
     })
     setAgenda(agendas);
+    montaCalendario();
 }
 
 function deletarAgenda() {
     agendas = agendas.filter(agenda => agenda.data !== dataSelecionada);
     setAgenda(agendas);
-    fechaModalExibe();
     montaCalendario();
+    fechaModalExibe();
 }
 
 function fechaModalExibe() {
