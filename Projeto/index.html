@@ -15,41 +15,43 @@
     </label>
     <nav>
         <ul>
-            <li><a href="@">Home</a></li>
-            <li><a href="@">Configuração</a></li>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./configuracao.html">Configuração</a></li>
         </ul>
     </nav>
 
     <div id="novaAgenda">
-        <h4 id="tituloAgenda">Novo Evento</h4>
-        <input type="text" id="inputTituloAgenda" placeholder="Título">
+        <h4 id="tituloAgendaMInsere">Nova Agenda</h4>
+        <input type="text" id="inputTituloAgendaMInsere" placeholder="Título">
 
-        <form id="tipoAgenda">
+        <label for="tipoAgendaMInsere" id="tituloTipoAgendaMInsere">Tipo da Agenda</label>
+        <form id="tipoAgendaMInsere">
             <div id="tipoAgendaContainerMInsere"></div>
         </form>
 
-        <button id="salvarAgenda">Salvar</button>
-        <button id="cancelarAgenda">Cancelar</button>
+        <button id="salvarAgendaMInsere" onclick="criarAgenda()">Salvar</button>
+        <button id="cancelarAgendaMInsere" onclick="fechaModalInsere()">Cancelar</button>
     </div>
 
     <div id="exibeAgenda">
-        <h4 id="tituloAgenda"></h4>
-        <input type="text" id="inputTituloAgenda" placeholder="Título">
+        <h4 id="tituloAgendaMExibe"></h4>
+        <input type="text" id="inputTituloAgendaMExibe" placeholder="Título">
 
-        <form id="tipoAgenda">
+        <label for="tipoAgendaMExibe" id="tituloTipoAgendaMExibe">Tipo da Agenda</label>
+        <form id="tipoAgendaMExibe">
             <div id="tipoAgendaContainerMExibe"></div>
         </form>
 
-        <button id="salvarAgenda">Salvar</button>
-        <button id="deletarAgenda">Deletar</button>
-        <button id="cancelarAgenda">Fechar</button>
+        <button id="salvarAgendaMExibe" onclick="atualizarAgenda()">Salvar</button>
+        <button id="deletarAgendaMExibe" onclick="deletarAgenda()">Deletar</button>
+        <button id="cancelarAgendaMExibe" onclick="fechaModalExibe()">Fechar</button>
     </div>
 
     <div id="espacoCalendario">
         <div id="cabecalho">
-            <button id="botaoAnterior">&lt;</button>
+            <button id="botaoAnterior" class="botoesCalendario">&lt;</button>
             <div id="mesSelecionado"></div>
-            <button id="botaoPosterior">&gt;</button>
+            <button id="botaoPosterior" class="botoesCalendario">&gt;</button>
         </div>
 
         <div id="diasDaSemana">
@@ -68,6 +70,7 @@
     <div id="fundoModal"></div>
 
 </body>
+<script src="./js/repository.js"></script>
 <script src="./js/scripts.js"></script>
 
 </html>
