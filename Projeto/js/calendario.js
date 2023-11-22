@@ -1,14 +1,28 @@
 
 let indexNavegacao = 0;
 const eCalendario = document.getElementById('calendario');
-let agendas = getAgendas();
-let tiposAgenda = getTiposAgenda();
 
 const eExibeAgendaModal = document.getElementById('exibeAgenda');
 const eNovaAgendaModal = document.getElementById('novaAgenda');
 const eFundoModal = document.getElementById('fundoModal');
 
+const eTituloAgendaMExibe = document.getElementById('inputTituloAgendaMExibe');
+const eTituloAgendaMInsere = document.getElementById('inputTituloAgendaMInsere');
+const eLabelTituloAgendaMExibe = document.getElementById('tituloAgendaMExibe');
+const eLabelTituloAgendaMInsere = document.getElementById('tituloAgendaMInsere');
+
 var dataSelecionada = null;
+
+eTituloAgendaMExibe.addEventListener('input', function () {
+    eLabelTituloAgendaMExibe.innerText = eTituloAgendaMExibe.value;
+})
+
+eTituloAgendaMInsere.addEventListener('input', function () {
+    eLabelTituloAgendaMInsere.innerText = eTituloAgendaMInsere.value;
+    if (!eTituloAgendaMInsere.value) {
+        eLabelTituloAgendaMInsere.innerText = 'Nova Agenda';
+    }
+})
 
 function abreModalAgenda(data) {
     dataSelecionada = data;
@@ -33,15 +47,14 @@ function abreModalAgenda(data) {
 }
 
 function atualizarAgenda() {
-    let eTituloAgenda = document.getElementById('inputTituloAgendaMExibe');
     let eRadioSelecionado = document.querySelector('input[type=radio][name=opcaoAgendaMExibe]:checked');
-    if (eTituloAgenda.value && eRadioSelecionado) {
-        gravarAgenda(eTituloAgenda.value, eRadioSelecionado.value);
+    if (eTituloAgendaMExibe.value && eRadioSelecionado) {
+        gravarAgenda(eTituloAgendaMExibe.value, eRadioSelecionado.value);
         fechaModalExibe();
         montaCalendario();
     } else {
-        if (!eTituloAgenda.value) {
-            eTituloAgenda.classList.add('erro');
+        if (!eTituloAgendaMExibe.value) {
+            eTituloAgendaMExibe.classList.add('erro');
         }
 
         if (!eRadioSelecionado) {
@@ -52,15 +65,15 @@ function atualizarAgenda() {
 }
 
 function criarAgenda() {
-    let eTituloAgenda = document.getElementById('inputTituloAgendaMInsere');
+    let eTituloAgendaMInsere = document.getElementById('inputTituloAgendaMInsere');
     let eRadioSelecionado = document.querySelector('input[type=radio][name=opcaoAgendaMInsere]:checked');
-    if (eTituloAgenda.value && eRadioSelecionado) {
-        gravarAgenda(eTituloAgenda.value, eRadioSelecionado.value);
+    if (eTituloAgendaMInsere.value && eRadioSelecionado) {
+        gravarAgenda(eTituloAgendaMInsere.value, eRadioSelecionado.value);
         fechaModalInsere();
         montaCalendario();
     } else {
-        if (!eTituloAgenda.value) {
-            eTituloAgenda.classList.add('erro');
+        if (!eTituloAgendaMInsere.value) {
+            eTituloAgendaMInsere.classList.add('erro');
         }
 
         if (!eRadioSelecionado) {
@@ -198,3 +211,12 @@ function setaModais() {
     })
 }
 
+function proximoMes() {
+    indexNavegacao++;
+    montaCalendario();
+}
+
+function mesAnterior() {
+    indexNavegacao--;
+    montaCalendario();
+}

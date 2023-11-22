@@ -3,9 +3,13 @@ function getAgendas() {
 }
 
 function getTiposAgenda() {
-    return localStorage.getItem('tiposAgenda') ? JSON.parse(localStorage.getItem('tipoAgenda')) : [{ titulo: 'Reunião', cor: '#DAA520' }, { titulo: 'Compromisso', cor: '#BDB76B' }, { titulo: 'Indisponibilidade', cor: '#FF6347' }];
+    return localStorage.getItem('tiposAgenda') ? JSON.parse(localStorage.getItem('tiposAgenda')) : [{ titulo: 'Reunião', cor: '#DAA520' }, { titulo: 'Compromisso', cor: '#BDB76B' }, { titulo: 'Indisponibilidade', cor: '#FF6347' }];
 }
 
 function setAgenda(agendas) {
     localStorage.setItem('agendas', JSON.stringify(agendas));
+}
+
+function setTiposAgenda() {
+    localStorage.setItem('tiposAgenda', JSON.stringify(tiposAgenda));
 }

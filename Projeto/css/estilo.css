@@ -129,6 +129,10 @@ label {
     border-width: 0px;
 }
 
+.foraDoMes:hover {
+    background-color: white !important;
+}
+
 #novaAgenda,
 #exibeAgenda {
     display: none;
@@ -168,4 +172,13 @@ label {
 .agenda {
     font-size: 12px;
     padding-left: 5%;
+}
+
+.tipoAgenda {
+    border-radius: 15%;
+    width: 200px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
